@@ -1,0 +1,9 @@
+.agents/
+autoapply_profile_backup_2026_06_23 (1).json
+skills-lock.json
+node_modules/
+.next/
+out/
+.env*.local
+.vscode/
+.idea/
