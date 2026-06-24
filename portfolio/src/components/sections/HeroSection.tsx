@@ -727,61 +727,36 @@ export function HeroSection() {
                 View Projects
                 <ArrowDown size={16} weight="bold" />
               </button>
-              <a href="/resume.pdf" download className="btn-secondary cursor-pointer">
+              <a href="/Yudaya_Madhavi_Resume.pdf" download="Yudaya_Madhavi_Resume.pdf" className="btn-secondary cursor-pointer">
                 Download Resume
               </a>
             </motion.div>
           </div>
 
-          {/* Right Side: Consolidated specs summary card (40%) */}
+          {/* Right Side: Premium Portrait Photo (40%) */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end relative z-10">
             <motion.div
-              className="glass p-6 w-full max-w-[380px] border border-[#D7CCC8]/12 relative overflow-hidden"
+              className="relative w-full max-w-[380px] md:max-w-[450px] aspect-square rounded-[32px] overflow-hidden border border-[#D7CCC8]/12 p-3 backdrop-blur-[24px] shadow-[0_12px_40px_rgba(28,28,28,0.4)] transition-all duration-500"
+              style={{
+                background: "rgba(78, 52, 46, 0.12)",
+                boxShadow: "0 12px 40px rgba(78, 52, 46, 0.08)",
+              }}
               initial={reduce ? false : { opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{
+                scale: 1.02,
+                borderColor: "rgba(215, 204, 200, 0.18)",
+                boxShadow: "0 20px 50px rgba(78, 52, 46, 0.15)",
+              }}
             >
-              <div className="border-b border-[#D7CCC8]/15 pb-4 mb-4">
-                <span className="text-[9px] font-mono uppercase tracking-[0.2em] text-[#D7CCC8]/55">
-                  SYSTEM PARAMETERS
-                </span>
-                <h3 className="text-base font-semibold text-[#D7CCC8] mt-1">CH. Yudaya Madhavi</h3>
-              </div>
-
-              <div className="space-y-4 text-xs">
-                <div>
-                  <span className="block text-[8px] font-mono text-[#D7CCC8]/55 uppercase tracking-widest mb-1">
-                    Academic profile
-                  </span>
-                  <p className="font-semibold text-[#D7CCC8]/90">NIT Agartala · B.Tech ECE</p>
-                  <p className="text-[10px] text-[#D7CCC8]/75 mt-0.5">CGPA: 7.69 (Class of 2026)</p>
-                </div>
-
-                <div>
-                  <span className="block text-[8px] font-mono text-[#D7CCC8]/55 uppercase tracking-widest mb-1">
-                    Generative AI Focus
-                  </span>
-                  <div className="flex flex-wrap gap-1.5 mt-1">
-                    {["LangChain", "LangGraph", "RAG", "AI Agents", "FastAPI"].map((skill) => (
-                      <span
-                        key={skill}
-                        className="px-2 py-0.5 text-[9px] font-mono rounded bg-[#4E342E]/25 border border-[#D7CCC8]/10 text-[#D7CCC8]"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <span className="block text-[8px] font-mono text-[#D7CCC8]/55 uppercase tracking-widest mb-1">
-                    Active Deployment Status
-                  </span>
-                  <div className="flex items-center gap-2 mt-1 py-1 px-2.5 rounded bg-[#4E342E]/20 border border-[#D7CCC8]/10">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#D7CCC8] animate-pulse" />
-                    <span className="font-mono text-[9px] text-[#D7CCC8]">AVAILABLE FOR OPPORTUNITIES </span>
-                  </div>
-                </div>
+              {/* Inner wrapper for image to ensure clip-path/rounded borders scale correctly */}
+              <div className="w-full h-full rounded-[20px] md:rounded-[24px] overflow-hidden">
+                <img
+                  src="/madhavi_photo.jpeg"
+                  alt="CH. Yudaya Madhavi"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </motion.div>
           </div>
